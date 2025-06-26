@@ -60,6 +60,14 @@ pip install pytest-html
 pytest --html=report.html
 ```
 
+### ▶️ Running the "View My Info" test
+
+To execute the newly added test:
+
+```bash
+pytest tests/test_view_my_info.py
+
+
 ---
 
 ## 🤝 Contributing

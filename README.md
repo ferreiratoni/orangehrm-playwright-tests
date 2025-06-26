@@ -14,6 +14,18 @@ The project structure is organized with best practices in mind, enabling easy ma
 - 🧪 Easy-to-run with `pytest`
 - 🌐 Ready to scale for future test coverage
 
+### ✅ New Test Added: View Personal Info
+
+This new test validates the visibility of the logged-in user's personal details:
+
+- Logs in using valid admin credentials
+- Navigates to the “My Info” section
+- Checks if the first name input is visible and filled
+
+> Test File: `tests/test_view_my_info.py`
+
+
+
 ---
 
 ## 🛠 Tech Stack
@@ -31,6 +43,7 @@ orangehrm-tests/
 ├── tests/
 │   ├── test_login_success.py
 │   └── test_login_failure.py
+|   └── test_login_failure.py
 ├── requirements.txt
 ├── pytest.ini
 └── README.md
