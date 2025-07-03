@@ -10,7 +10,8 @@ def test_user_can_view_my_info():
     And the full name of the employee should be visible
     """
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)
+        # browser = p.chromium.launch(headless=False)
+        browser = p.chromium.launch()
         page = browser.new_page()
 
         # Step 1: Login

@@ -9,7 +9,8 @@ def test_user_login_fails_with_invalid_credentials():
     Then an error message should appear
     """
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)
+        # browser = p.chromium.launch(headless=False)
+        browser = p.chromium.launch()
         page = browser.new_page()
         page.goto("https://opensource-demo.orangehrmlive.com/")
         page.fill("input[name='username']", "WrongUser")
