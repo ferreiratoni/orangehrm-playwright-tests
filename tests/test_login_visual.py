@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 from applitools.playwright import Eyes, Target
 from playwright.sync_api import sync_playwright
 
+# Load environment variables from .env file
 load_dotenv()
 
 def test_visual_login():
@@ -13,24 +14,24 @@ def test_visual_login():
         browser = p.chromium.launch()
         page = browser.new_page()
 
-        # Abrir Applitools Eyes
+        # Start Applitools Eyes session
         eyes.open(page, "OrangeHRM", "Visual Login Test", {'width': 1024, 'height': 768})
 
-        # Acessar a página
+        # Navigate to the login page
         page.goto("https://opensource-demo.orangehrmlive.com/")
 
-        # Tirar o primeiro snapshot
+        # Take snapshot of the login page
         eyes.check("Login Page", Target.window().fully())
 
-        # Fazer login
+        # Perform login
         page.fill('input[name="username"]', "Admin")
         page.fill('input[name="password"]', "admin123")
         page.click('button[type="submit"]')
 
-        # Esperar e capturar a próxima tela
+        # Wait for dashboard page and take snapshot
         page.wait_for_url("**/web/index.php/dashboard/**")
         eyes.check("Dashboard Page", Target.window().fully())
 
-        # Fechar Eyes e navegador
+        # Close Applitools session and browser
         eyes.close()
         browser.close()
