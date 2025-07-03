@@ -16,6 +16,37 @@ The project structure is organized with best practices in mind, enabling easy ma
 
 ### ✅ New Test Added: View Personal Info
 
+
+### 👁️ Visual AI Testing with Applitools
+
+This project includes a visual regression test using [Applitools Eyes](https://applitools.com/), which applies AI to validate that the UI remains visually consistent across changes.
+
+#### ✅ What it does:
+
+- Takes a snapshot of the login page
+- Logs into the application
+- Takes a snapshot of the dashboard page
+- Sends both snapshots to the Applitools dashboard
+- Detects visual differences using AI (like moved buttons, missing labels, or layout shifts)
+
+#### 🧪 How to run the test:
+
+```bash
+pytest tests/test_login_visual.py
+```
+
+#### 📌 Requirements:
+
+- A free [Applitools account](https://applitools.com/)
+- A `.env` file at the project root with your API key:
+
+```
+APPLITOOLS_API_KEY=your_key_here
+```
+
+> This test demonstrates how visual validation can be added to end-to-end tests without relying on pixel-perfect assertions or manual checks.
+
+
 This new test validates the visibility of the logged-in user's personal details:
 
 - Logs in using valid admin credentials
@@ -41,11 +72,13 @@ This new test validates the visibility of the logged-in user's personal details:
 ```
 orangehrm-tests/
 ├── tests/
-│   ├── test_login_success.py
-│   └── test_login_failure.py
-|   └── test_login_failure.py
+│ ├── test_login_success.py
+│ ├── test_login_failure.py
+│ ├── test_view_my_info.py
+│ └── test_login_visual.py
 ├── requirements.txt
 ├── pytest.ini
+├── .env # <- not committed to Git
 └── README.md
 ```
 
