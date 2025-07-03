@@ -1,3 +1,5 @@
+![CI](https://github.com/ferreiratoni/orangehrm-playwright-tests/actions/workflows/python-tests.yml/badge.svg)
+
 # OrangeHRM – E2E Automated Tests with Playwright and Python
 
 This repository contains end-to-end UI automation tests for [OrangeHRM Demo](https://opensource-demo.orangehrmlive.com/), written in Python using [Playwright](https://playwright.dev/python/).
