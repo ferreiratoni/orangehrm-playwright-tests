@@ -29,6 +29,32 @@ This project includes a visual regression test using [Applitools Eyes](https://a
 - Sends both snapshots to the Applitools dashboard
 - Detects visual differences using AI (like moved buttons, missing labels, or layout shifts)
 
+---
+
+### 🔐 CI Setup for Applitools
+
+To run visual tests using Applitools on GitHub Actions, you need to securely provide your API key.
+
+#### 📌 Steps:
+
+1. Go to your GitHub repository:  
+   [https://github.com/ferreiratoni/orangehrm-playwright-tests](https://github.com/ferreiratoni/orangehrm-playwright-tests)
+
+2. Navigate to:  
+   `Settings > Secrets and variables > Actions`
+
+3. Click on **“New repository secret”** and add:
+
+| Name                 | Value                       |
+|----------------------|-----------------------------|
+| `APPLITOOLS_API_KEY` | Your API key from Applitools |
+
+4. Save it.  
+   Your GitHub Actions workflow will automatically use this key when running tests.
+
+> 🔒 This keeps your credentials safe and hidden from the codebase.
+
+
 #### 🧪 How to run the test:
 
 ```bash
