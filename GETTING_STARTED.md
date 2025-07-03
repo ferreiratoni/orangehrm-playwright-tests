@@ -21,13 +21,20 @@ git clone https://github.com/ferreiratoni/orangehrm-playwright-tests.git
 cd orangehrm-playwright-tests
 ```
 
-2. **Install dependencies**
+2. **Create a virtual environment (optional but recommended)**
+
+```bash
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+```
+
+3. **Install dependencies**
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. **Install Playwright browsers**
+4. **Install Playwright browsers**
 
 ```bash
 playwright install
@@ -51,6 +58,34 @@ pytest tests/test_login_success.py
 
 ---
 
+### ▶️ Running the "View My Info" test
+
+To execute the test that verifies the personal info screen:
+
+```bash
+pytest tests/test_view_my_info.py
+```
+
+---
+
+### 👁️ Running the Visual AI Test (Applitools)
+
+To run the visual regression test powered by Applitools:
+
+```bash
+pytest tests/test_login_visual.py
+```
+
+Make sure you have a `.env` file at the root of the project with your Applitools API key:
+
+```
+APPLITOOLS_API_KEY=your_applitools_key_here
+```
+
+> Create a free account at [applitools.com](https://applitools.com/) to get your API key.
+
+---
+
 ## 🧪 Test Reports (Optional)
 
 To generate HTML reports:
@@ -59,14 +94,6 @@ To generate HTML reports:
 pip install pytest-html
 pytest --html=report.html
 ```
-
-### ▶️ Running the "View My Info" test
-
-To execute the newly added test:
-
-```bash
-pytest tests/test_view_my_info.py
-
 
 ---
 
@@ -80,6 +107,21 @@ Feel free to fork this repository and add more test scenarios or enhancements.
 
 - This project is for educational and portfolio purposes only.
 - OrangeHRM Demo site is used as a public testing sandbox.
+
+
+---
+
+## 💡 Tip: Using PyCharm?
+
+You can run tests directly in PyCharm:
+
+- Right-click a test file (e.g. `test_login_visual.py`) and select **"Run"**
+- To activate your virtual environment, make sure your interpreter is set in:
+  `File > Settings > Python Interpreter`
+- To view `.env` variables automatically, install the **EnvFile** plugin or set them manually under:
+  `Run > Edit Configurations > Environment variables`
+
+
 
 ---
 

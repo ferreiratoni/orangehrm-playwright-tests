@@ -47,6 +47,9 @@ APPLITOOLS_API_KEY=your_key_here
 > This test demonstrates how visual validation can be added to end-to-end tests without relying on pixel-perfect assertions or manual checks.
 
 
+
+
+
 This new test validates the visibility of the logged-in user's personal details:
 
 - Logs in using valid admin credentials
@@ -54,6 +57,13 @@ This new test validates the visibility of the logged-in user's personal details:
 - Checks if the first name input is visible and filled
 
 > Test File: `tests/test_view_my_info.py`
+
+
+### 🔗 Visual Test Example
+
+This test was executed using [Applitools Eyes](https://applitools.com/) and passed successfully.
+
+👉 [View test result (Applitools Dashboard)](https://eyes.applitools.com/app/test-results/00000251650774888792?accountId=x3tirYl5wEu7WPVVe4kErA__&display=details&top=00000251650774888792%283%29)
 
 
 
